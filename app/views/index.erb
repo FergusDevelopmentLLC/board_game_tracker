@@ -1,6 +1,11 @@
 <main class="main">
-    main
+    <% if logged_in? %>
+    <p>Hello <%=current_user.username%> <a href="/logout">Logout</a></p>
+    <%else%>
+    <p><a href="/login">Login</a> <a href="/signup">Signup</a></p>
+    <%end%>
+    home main
 </main>
 <aside class="right">
-    aside
+    home aside
 </aside>
