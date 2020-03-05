@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0 auto;
+    box-sizing: content-box;
+    max-width: 960px;
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .9em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin-bottom: .3em;
+    color: #0000cd;
+}
+
+ul {
+    list-style: none;
+    margin-top: .5em;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.hg {
+    display: grid;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 
+                        1fr
+                        30px;
+    min-height: 100vh;
+}
+
+.header { 
+    grid-area: header;
+    background: #cedbe9;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header div {
+    flex-basis: 50%;
+    padding: .5em 0 .5em 1em;
+    font-weight: bold;
+    font-size: 2em;
+    color: blue;
+}
+
+.footer { 
+    grid-area: footer;
+    background: #cedbe9;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    text-align: center;
+    padding-top: .2em;
+    color: gray;
+}
+
+.main { 
+    grid-area: main;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    padding: 1em;
+    background: lightyellow;
+}
+
+.right { 
+    grid-area: featured;
+    border-right: 1px solid gray;
+    padding: 1em;
+    background: #f2efe7;
+}
+
+.latest-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+.latest-details {
+    flex-basis: 30%;
+}
+
+.latest-description {
+    flex-basis: 70%;
+    padding: 0 0 0 1em;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.category {
+    flex-basis: 150px;
+    margin: .5em;
+}
+
+.feature {
+    margin-bottom: 1em;
+}
+
+.latest-wrapper {
+    border-bottom: 1px solid lightgray;
+}
+
+.categories-wrapper {
+    margin-top: 1em;
+}
+
+header ul {
+    display: flex;
+    margin: 0 3em 0 0;
+    flex-basis: 50%;
+    justify-content: flex-end;
+}
+
+header ul li {
+    margin-left: 2em;
+}
+
+@media screen and (max-width: 700px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .header div {
+        padding: 0;
+        flex-basis: 30%;
+        margin-top: .5em;
+    }
+
+    header ul {
+        margin: .5em;
+    }
+    header ul li {
+        margin: 0 1em;
+    }
+}
+
+.error {
+    color: red;
+    margin-bottom: .5em;
+}
+
+.form div {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: .5em;
+}
+
+.form div label {
+    min-width: 100px;
+}
+
+input {
+    border: 1px solid lightgray;
+    padding: 3px;
+}
