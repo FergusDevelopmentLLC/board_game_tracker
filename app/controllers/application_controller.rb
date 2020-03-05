@@ -22,7 +22,13 @@ class ApplicationController < Sinatra::Base
 
 		def current_user
 			User.find(session[:user_id])
-		end
+    end
+    
+    def generate_code(number)
+      charset = Array('a'..'z')
+      Array.new(number) { charset.sample }.join
+    end
+
 	end
   
 end
