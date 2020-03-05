@@ -187,6 +187,33 @@ textarea {
     border: 1px solid lightgray;
 }
 
+/* games listing */
+.game-listing-new-game {
+    text-align: right;
+    margin-bottom: 1em;
+}
+
+.game-listing-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.game-listing-item {
+    flex: 0 0 20%;
+    padding: .5em;
+    border: 1px solid lightgray;
+    margin: 1em;
+}
+
+.game-listing-item-img {
+    margin-bottom: .5em;
+}
+
+.game-listing-item-details li {
+    font-size: .8rem;
+}
+
 @media screen and (max-width: 700px) {
 
     .home {
