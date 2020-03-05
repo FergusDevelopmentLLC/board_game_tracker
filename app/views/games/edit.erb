@@ -1,0 +1,48 @@
+<div class="full">
+    <main class="main">
+        <h2>Edit Game</h2>
+        <form action="/games/<%=@game.id%>" class="form" method="post" enctype="multipart/form-data">
+            <input id="hidden" type="hidden" name="_method" value="PATCH">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Name" value="<%=@game.name%>" />
+            </div>
+
+            <div>
+                <label for="short_description">Short Description</label>
+                <input type="text" name="short_description" id="short_description" placeholder="Short decription" value="<%=@game.short_description%>" />
+            </div>
+
+            <div>
+                <label for="description">Description</label>
+                <textarea name="description" id="description" placeholder="Description"><%=@game.description%></textarea>
+            </div>
+
+            <div>
+                <label for="number_of_players">Number of players</label>
+                <input type="text" name="number_of_players" id="number_of_players" placeholder="Number of players" value="<%=@game.number_of_players%>" />
+            </div>
+
+            <div>
+                <label for="play_length">Average play length</label>
+                <input type="text" name="play_length" id="play_length" placeholder="Average play length" value="<%=@game.play_length%>" />
+            </div>
+            <div>
+                <label for="game_edit_current_image">Current image</label>
+                <div id="game_edit_current_image">
+                    <img src="../../../uploads/<%=@game.image%>"/>
+                </div>
+            </div>
+            <div>
+                <label for="image">Overwrite image</label>
+                <input type="file" name="image" id="image" />
+            </div>
+            <div>
+                <label for="featured">Featured</label>
+                <input type="checkbox" name="featured" id="featured" />
+            </div>
+
+            <button type="submit">Save game</button>
+        </form>
+    </main>
+</div>
