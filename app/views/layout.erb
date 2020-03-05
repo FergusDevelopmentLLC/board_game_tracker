@@ -1,63 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Board Game Tracker</title>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="../../../stylesheets/styles.css" />
-    <% if request.path_info == "/" %>
-    <style>
-        .hg {
-            display: grid;
-            grid-template-areas: "header header"
-                                 "main featured"
-                                 "footer footer";
-            grid-template-columns: 3fr 1fr;
-            grid-template-rows: 100px 
-                                1fr
-                                30px;
-        }
-
-        @media screen and (max-width: 500px) {
-    
-            .hg {
-                grid-template-areas: "header"
-                                    "main"
-                                    "featured"
-                                    "footer";
-                grid-template-columns: 100%;
-                grid-template-rows: 100px 
-                                    auto 
-                                    auto
-                                    30px;
-            }
-
-            .latest-wrapper {
-                flex-direction: column;
-            }
-
-            .latest-img {
-                width: 75%;
-                margin: 0 auto 1em auto;
-            }
-
-            .categories {
-                flex-direction: column;
-            }
-
-            .category {
-                width: 50%;
-                margin: 0 auto 1em auto;
-            }
-        }
-    </style>
-    <%end%>
 </head>
-
-<body class="hg">
+<body>
     <header class="header">
-        
         <div>Board Game Tracker</div>
         <ul>
             <li><a href="/">Home</a></li>
@@ -74,5 +24,4 @@
     <%= yield %>
     <footer class="footer">&copy;<%=Time.new.year%> Board Game Tracker</footer>
 </body>
-
 </html>
