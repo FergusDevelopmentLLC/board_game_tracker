@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     
   post "/games" do
       
-    tempfile = params[:image][:tempfile] 
+      tempfile = params[:image][:tempfile] 
       filename = params[:image][:filename]
 
       timestamp = Time.now.to_i
@@ -28,17 +28,24 @@ class GamesController < ApplicationController
                         :image => image_file,
                         :featured => params[:featured] == "on" ? 1 : 0,
                         :created_datetime => timestamp)
-
       if(!@game.valid?)
           erb :'games/new'
       else
           if @game.save
-              redirect '/'
+              redirect to "/games/#{@game.id}"
           else
               redirect '/error'
           end
       end
   end
 
+  get '/games/:id' do
+    if logged_in?
+      @game = Game.find_by_id(params[:id])
+      erb :'games/show'
+    else
+      redirect '/'
+    end
+  end
 end
   
