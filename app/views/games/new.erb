@@ -1,0 +1,43 @@
+<div class="full">
+    <main class="main">
+        <h2>New Game</h2>
+        <form action="/games" class="form" method="post" enctype="multipart/form-data">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Name" value="<%=generate_code(5)%>" />
+            </div>
+
+            <div>
+                <label for="short_description">Short Description</label>
+                <input type="text" name="short_description" id="short_description" placeholder="Short decription" value="new game short description" />
+            </div>
+
+            <div>
+                <label for="description">Description</label>
+                <textarea name="description" id="description" placeholder="Description"></textarea>
+            </div>
+
+            <div>
+                <label for="number_of_players">Number of players</label>
+                <input type="text" name="number_of_players" id="number_of_players" placeholder="Number of players" value="4-5" />
+            </div>
+
+            <div>
+                <label for="play_length">Average play length</label>
+                <input type="text" name="play_length" id="play_length" placeholder="Average play length" value="25 min" />
+            </div>
+
+            <div>
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image" />
+            </div>
+
+            <div>
+                <label for="featured">Featured</label>
+                <input type="checkbox" name="featured" id="featured" />
+            </div>
+
+            <button type="submit">Create game</button>
+        </form>
+    </main>
+</div>
